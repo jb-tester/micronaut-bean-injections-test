@@ -1,0 +1,34 @@
+package com.mytests.micronaut.qualifyingByAnnotationMembers;
+
+import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
+
+/**
+ * *
+ * <p>Created by irina on 24.08.2021.</p>
+ * <p>Project: micronaut-injections-test</p>
+ * *
+ */
+@Singleton
+public class UseQualifiedService {
+    
+    @Inject @DummyQualifier("first")
+    QualifiedService service1; 
+    
+    @Inject @DummyQualifier(value = "first", index = 1)
+    QualifiedService service2; 
+    
+    @Inject @DummyQualifier(value = "second", index = 0)
+    QualifiedService service3; 
+    
+    @Inject @DummyQualifier(value = "second", index = 1)
+    QualifiedService service4;
+    
+    @Inject @NoArgQualifier
+    QualifiedService service5;
+    
+    public String getAll(){
+
+        return service1.getId() + " " + service2.getId() + " " + service3.getId() + " " + service4.getId() + " " + service5.getId();
+    }
+}
