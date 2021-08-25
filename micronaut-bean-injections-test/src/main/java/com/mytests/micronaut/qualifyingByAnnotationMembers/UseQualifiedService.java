@@ -11,7 +11,7 @@ import jakarta.inject.Singleton;
  */
 @Singleton
 public class UseQualifiedService {
-    
+     // all these injection points should navigate to the single matching candidate instead of suggesting multiple ones
     @Inject @DummyQualifier("first")
     QualifiedService service1; 
     
@@ -24,6 +24,7 @@ public class UseQualifiedService {
     @Inject @DummyQualifier(value = "second", index = 1)
     QualifiedService service4;
     
+    // even this no-attribute qualifier doesn't work as expected
     @Inject @NoArgQualifier
     QualifiedService service5;
     

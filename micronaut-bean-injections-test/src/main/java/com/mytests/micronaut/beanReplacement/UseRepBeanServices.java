@@ -13,10 +13,10 @@ import jakarta.inject.Singleton;
 @Singleton
 public class UseRepBeanServices {
     @Inject
-    RepBeanService1 repBeanService1;
+    RepBeanService1 repBeanService1;   // should navigate to the replacement bean com.mytests.micronaut.beanReplacement.RepBeanService1Replacement
 
     @Inject @Named("namedReplacementTestBean")
-    RepBeanService2 repBeanService2;
+    RepBeanService2 repBeanService2;  // should navigate to the replacement bean com.mytests.micronaut.beanReplacement.RepBeanService2Impl3
 
     public String returnServices() {
         String rez = repBeanService1.getId()+" "+repBeanService2.getId();

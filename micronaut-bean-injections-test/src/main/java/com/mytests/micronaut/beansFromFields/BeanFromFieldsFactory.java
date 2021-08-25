@@ -15,10 +15,10 @@ import jakarta.inject.Singleton;
 public class BeanFromFieldsFactory {
 
     // should be reported as error: Beans produced from fields cannot be private or protected
-  //  @Bean(typed = BeanServiceToCreateInfactory.class) @Named("fromPrivateField")
-  //  private BeanServiceToCreateInfactory invalidBean = () -> "incorrect attempt to create bean";
+  // @Bean(typed = BeanServiceToCreateInfactory.class) @Named("fromPrivateField")
+  // private BeanServiceToCreateInfactory invalidBean = () -> "incorrect attempt to create bean";
     
-    // not recognized as bean
+    // not recognized as bean and shown as not used
     @Bean(typed = BeanServiceToCreateInfactory.class) @Named("fromField")
     public BeanServiceToCreateInfactory bean1 = () -> "bean created from field";
     

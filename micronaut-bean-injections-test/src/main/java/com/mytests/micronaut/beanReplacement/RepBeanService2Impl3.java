@@ -10,7 +10,7 @@ import jakarta.inject.Singleton;
  * <p>Project: micronaut-bean-injections-test</p>
  * *
  */
-@Replaces(bean = RepBeanService2.class, named = "namedReplacementTestBean")
+@Replaces(bean = RepBeanService2.class, named = "namedReplacementTestBean")   // no completion/reference to name
 @Singleton
 @Named("namedReplacementTestBean")
 public class RepBeanService2Impl3 implements RepBeanService2 {
