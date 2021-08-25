@@ -14,6 +14,7 @@ GET http://localhost:8080/limitedInjectableType
 ###
 GET http://localhost:8080/replaceBeans
 
-
+###
+GET http://localhost:8080/beansFromFields
 
 ###
