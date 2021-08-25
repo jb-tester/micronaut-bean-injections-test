@@ -1,0 +1,19 @@
+###
+GET http://localhost:8080/genericTypeArgs
+
+###
+GET http://localhost:8080/qualifierAnnotationMembers
+
+<> 2021-08-25T151847.200.json
+
+###
+GET http://localhost:8080/limitedInjectableType
+
+<> 2021-08-25T151827.200.json
+
+###
+GET http://localhost:8080/replaceBeans
+
+
+
+###
