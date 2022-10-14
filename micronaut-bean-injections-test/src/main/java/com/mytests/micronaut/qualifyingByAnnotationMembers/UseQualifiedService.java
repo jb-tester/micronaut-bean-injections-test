@@ -18,8 +18,9 @@ public class UseQualifiedService {
     @Inject @DummyQualifier(value = "first", index = 1)
     QualifiedService service2; 
     
-    @Inject @DummyQualifier(value = "second", index = 0)
-    QualifiedService service3; 
+    //@Inject @DummyQualifier(value = "second") //- multiple candidates are shown in this case, and this is ok
+    @Inject @DummyQualifier(value = "second", index = 0) // suggestion to remove the default-value attr is shown, incorrect!
+    QualifiedService service3;
     
     @Inject @DummyQualifier(value = "second", index = 1)
     QualifiedService service4;

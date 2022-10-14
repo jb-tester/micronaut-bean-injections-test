@@ -1,6 +1,6 @@
 package com.mytests.micronaut.qualifyingByGenericTypeArgs;
 
-import jakarta.inject.Inject;
+
 import jakarta.inject.Singleton;
 
 /**

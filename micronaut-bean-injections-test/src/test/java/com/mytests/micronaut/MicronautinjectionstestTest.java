@@ -15,6 +15,7 @@ class MicronautinjectionstestTest {
 
     @Test
     void testItWorks() {
+        System.out.println(application.getClass());
         Assertions.assertTrue(application.isRunning());
     }
 
