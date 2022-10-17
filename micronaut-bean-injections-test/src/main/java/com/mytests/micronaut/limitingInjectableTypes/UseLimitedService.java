@@ -13,6 +13,7 @@ import jakarta.inject.Singleton;
 public class UseLimitedService {
     
     @Inject LimitedService service;
+
     // @Inject LimitedServiceImpl serviceImpl;  // incorrect! injection error should be reported
     
     public String showAll(){
