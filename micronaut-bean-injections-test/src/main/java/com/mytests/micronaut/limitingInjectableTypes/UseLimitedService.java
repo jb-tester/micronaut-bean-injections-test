@@ -15,10 +15,10 @@ public class UseLimitedService {
     @Inject LimitedService service;
 
     // incorrect! injection error should be reported
-    // @Inject LimitedServiceImpl serviceImpl;
+    @Inject LimitedServiceImpl serviceImpl;
     
     public String showAll(){
-        return service.getId()// +" "+serviceImpl.getId()
+        return service.getId() +" "+serviceImpl.getId()
                 ;
     }
 }
