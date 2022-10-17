@@ -14,7 +14,8 @@ public class UseLimitedService {
     
     @Inject LimitedService service;
 
-    // @Inject LimitedServiceImpl serviceImpl;  // incorrect! injection error should be reported
+    // incorrect! injection error should be reported
+    // @Inject LimitedServiceImpl serviceImpl;
     
     public String showAll(){
         return service.getId()// +" "+serviceImpl.getId()
