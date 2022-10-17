@@ -13,6 +13,8 @@ import jakarta.inject.Singleton;
 public class LimitedServiceImpl extends LimitedService {
     @Override
     public String getId() {
+
+
         return "limited service impl";
     }
 }
