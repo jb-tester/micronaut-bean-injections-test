@@ -9,12 +9,13 @@ import jakarta.inject.Singleton;
  * <p>Project: micronaut-injections-test</p>
  * *
  */
-@Singleton @Bean(typed = LimitedService.class)
+@Singleton
+@Bean(typed = LimitedService.class)
 public class LimitedServiceImpl extends LimitedService {
     @Override
     public String getId() {
 
 
-        return "limited service impl";
+        return "LimitedService ";
     }
 }

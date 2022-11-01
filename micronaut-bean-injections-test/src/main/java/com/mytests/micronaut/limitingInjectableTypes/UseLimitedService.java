@@ -11,14 +11,23 @@ import jakarta.inject.Singleton;
  */
 @Singleton
 public class UseLimitedService {
-    
+    // ambiguous dependency error is reported due to both @Bean and @Singleton annotations present
     @Inject LimitedService service;
 
-    // incorrect! injection error should be reported
+    // no ambiguous dependency errors should be shown:
+    @Inject
+    private LimitedServiceSuper service21;
+
+    // no ambiguous dependency errors should be shown:
+    @Inject
+    private LimitedServiceSub service22;
+
+    // no bean to inject should be found! injection error should be reported
     //@Inject LimitedServiceImpl serviceImpl;
-    
+
     public String showAll(){
-        return service.getId() //+" "+serviceImpl.getId()
+
+        return service.getId()+service21.getId()+service22.getSubStr()//+" "+serviceImpl.getId()
                 ;
     }
 }
