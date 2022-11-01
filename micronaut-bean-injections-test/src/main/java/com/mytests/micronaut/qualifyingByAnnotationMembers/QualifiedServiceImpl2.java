@@ -8,10 +8,10 @@ import jakarta.inject.Singleton;
  * <p>Project: micronaut-injections-test</p>
  * *
  */
-@Singleton @DummyQualifier(value = "first", index = 1)
+@Singleton @NotRequiredAttrsQualifier(attr1 = "first", attr2 = 1)
 public class QualifiedServiceImpl2 implements QualifiedService {
     @Override
-    public String getId() {
+    public String getStr() {
         return "first1";
     }
 }

@@ -7,5 +7,5 @@ package com.mytests.micronaut.qualifyingByAnnotationMembers;
  * *
  */
 public interface QualifiedService {
-    String getId();
+    String getStr();
 }

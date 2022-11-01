@@ -12,25 +12,28 @@ import jakarta.inject.Singleton;
 @Singleton
 public class UseQualifiedService {
      // all these injection points should navigate to the single matching candidate instead of suggesting multiple ones
-    @Inject @DummyQualifier("first")
+    @Inject @NotRequiredAttrsQualifier(attr1 = "first")
     QualifiedService service1; 
     
-    @Inject @DummyQualifier(value = "first", index = 1)
+    @Inject @NotRequiredAttrsQualifier(attr1 = "first", attr2 = 1)
     QualifiedService service2; 
     
     //@Inject @DummyQualifier(value = "second") //- multiple candidates are shown in this case, and this is ok
-    @Inject @DummyQualifier(value = "second", index = 0) // suggestion to remove the default-value attr is shown, incorrect!
+    @Inject @NotRequiredAttrsQualifier(attr1 = "second", attr2 = 0) // suggestion to remove the default-value attr is shown, incorrect!
     QualifiedService service3;
     
-    @Inject @DummyQualifier(value = "second", index = 1)
+    @Inject @NotRequiredAttrsQualifier(attr1 = "second", attr2 = 1)
     QualifiedService service4;
     
     // even this no-attribute qualifier doesn't work as expected
     @Inject @NoArgQualifier
     QualifiedService service5;
-    
+
+    @Inject @TwoAttrsQualifier(strAttr = "foo", intAttr = 1)
+    QualifiedService service6;
+
     public String getAll(){
 
-        return service1.getId() + " " + service2.getId() + " " + service3.getId() + " " + service4.getId() + " " + service5.getId();
+        return service1.getStr() + " " + service2.getStr() + " " + service3.getStr() + " " + service4.getStr() + " " + service5.getStr();
     }
 }

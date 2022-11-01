@@ -11,7 +11,7 @@ import jakarta.inject.Singleton;
 @Singleton @NoArgQualifier
 public class QualifiedServiceImpl5 implements QualifiedService {
     @Override
-    public String getId() {
+    public String getStr() {
         return "noargs";
     }
 }
