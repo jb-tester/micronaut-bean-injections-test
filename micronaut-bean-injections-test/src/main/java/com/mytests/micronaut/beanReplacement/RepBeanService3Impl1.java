@@ -16,6 +16,6 @@ import jakarta.inject.Singleton;
 public class RepBeanService3Impl1 implements RepBeanService3 {
     @Override
     public String getId() {
-        return "service3 default";
+        return "service3 default replaceable implementation";
     }
 }

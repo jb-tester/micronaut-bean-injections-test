@@ -19,10 +19,10 @@ public class UseRepBeanServices {
     RepBeanService2 repBeanService2;  // should navigate to the replacement bean com.mytests.micronaut.beanReplacement.RepBeanService2Impl3
 
     @Inject @Named("replacement3Test")
-    RepBeanService3 repBeanService3;
+    RepBeanService3 repBeanService3; // should navigate to the replacement bean com.mytests.micronaut.beanReplacement.RepBeanService3Impl3
 
     public String returnServices() {
-        String rez = repBeanService1.getId()+" "+repBeanService2.getId()+ repBeanService3.getId();
+        String rez = repBeanService1.getId()+"; "+repBeanService2.getId()+ "; "+repBeanService3.getId();
         return rez;
     }
 }
