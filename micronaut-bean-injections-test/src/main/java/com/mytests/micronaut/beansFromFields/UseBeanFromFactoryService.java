@@ -18,8 +18,16 @@ public class UseBeanFromFactoryService {
     
     @Inject @Named("fromMethod")
     BeanServiceToCreateInfactory b2;
-    
+
+    // annotated both with @Bean and @Singleton:
+    @Inject
+    MyBean myBean;
+
     public String returnServices(){
-        return b1.getId()+" "+b2.getId();
+        return b1.getId() + " "
+               + b2.getId() + " "
+             // + namedBeanFromFactory.getId()  // try intention
+             // + beanFromFactory.getId()        // try intention
+                ;
     }
 }

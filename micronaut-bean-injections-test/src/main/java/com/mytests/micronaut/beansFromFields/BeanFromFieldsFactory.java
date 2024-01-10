@@ -26,5 +26,36 @@ public class BeanFromFieldsFactory {
     public BeanServiceToCreateInfactory bean2(){
         return new BeanServiceToCreateInfactoryImpl("created from method");
     }
-    
+
+    // test qualifiers:
+
+    @Bean @MyQualifier1
+    public BeanFromFactory bean31(SomeBean someBean){
+        return new BeanFromFactory(someBean,"myqualifier1");
+    }
+    @Bean @MyQualifier2
+    public BeanFromFactory bean32(SomeBean someBean){
+        return new BeanFromFactory(someBean, "myqualifier2");
+    }
+
+    // named beans:
+
+    @Named("bean41")
+    @Bean
+    public NamedBeanFromFactory bean41(){
+        return new NamedBeanFromFactory("bean41");
+    }
+    @Named("bean42")
+    @Bean
+    public NamedBeanFromFactory bean42(){
+        return new NamedBeanFromFactory("bean42");
+    }
+
+    // annotated both with @Bean and @Singleton:
+
+    @Bean @Singleton
+    public MyBean myBean(){
+        return new MyBean();
+    }
+
 }
