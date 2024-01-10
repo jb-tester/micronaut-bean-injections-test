@@ -25,7 +25,7 @@ public class UseQualifiedService {
     @Inject @NotRequiredAttrsQualifier(attr1 = "second", attr2 = 1)
     QualifiedService service4;
     
-    // even this no-attribute qualifier doesn't work as expected
+    // even this no-attribute qualifier doesn't work as expected - fixed
     @Inject @NoArgQualifier
     QualifiedService service5;
 
