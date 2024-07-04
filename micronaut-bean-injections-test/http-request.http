@@ -1,23 +1,26 @@
-###
+###named
+GET http://localhost:8080/namedAndQualifiedBeans
+
+###primary
 GET http://localhost:8080/primaryBeans
 
-###
+###generics
 GET http://localhost:8080/genericTypeArgs
 
-###
+###qualifierAnnos
 GET http://localhost:8080/qualifierAnnotationMembers
 
 <> 2021-08-25T151847.200.json
 
-###
+###limitedInjectable
 GET http://localhost:8080/limitedInjectableType
 
 <> 2021-08-25T151827.200.json
 
-###
+###replace
 GET http://localhost:8080/replaceBeans
 
-###
+###fromFields
 GET http://localhost:8080/beansFromFields
 
 ###

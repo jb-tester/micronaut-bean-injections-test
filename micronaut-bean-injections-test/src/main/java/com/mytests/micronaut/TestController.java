@@ -3,6 +3,7 @@ package com.mytests.micronaut;
 import com.mytests.micronaut.beanReplacement.UseRepBeanServices;
 import com.mytests.micronaut.beansFromFields.UseBeanFromFactoryService;
 import com.mytests.micronaut.limitingInjectableTypes.UseLimitedService;
+import com.mytests.micronaut.namedAndQualifiedBeansFactories.UseNamedBeans;
 import com.mytests.micronaut.primaryBeans.UsePrimaryBean;
 import com.mytests.micronaut.qualifyingByAnnotationMembers.UseQualifiedService;
 import com.mytests.micronaut.qualifyingByGenericTypeArgs.UseGenericService;
@@ -37,6 +38,9 @@ public class TestController {
     @Inject
     UsePrimaryBean usePrimaryBean;
 
+    @Inject
+    private UseNamedBeans useNamedBeans;
+
     @Get("/genericTypeArgs")
     public String genericTypeArgs() {
         return "genericTypeArgs test: "+useGenericService.getService1().getServiceProvider().getId();
@@ -66,4 +70,10 @@ public class TestController {
     public String primaryBeans() {
         return "primaryBeans test: "+usePrimaryBean.getTestPrimary();
     }
+
+    @Get("/namedAndQualifiedBeans")
+    public String namedAndQualifiedBeans() {
+        return "namedAndQualifiedBeans: "+ useNamedBeans.getBeans();
+    }
+
 }
